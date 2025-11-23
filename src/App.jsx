@@ -8,7 +8,7 @@ import HamburgerMenu from "./components/HamburgerMenu";
 import Home from "./pages/Home";
 import Swap from "./pages/Swap";
 import StakeBeans from "./pages/StakeBeans";
-import Skills from "./pages/skills"; // ✅ hoofdletter fix
+import Skills from "./pages/Skills"; // ✅ hoofdletter fix
 import ProjectStats from "./pages/ProjectStats";
 import MyWallet from "./pages/MyWallet";
 import Quest from "./pages/Quest";
