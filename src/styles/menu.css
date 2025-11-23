@@ -1,0 +1,285 @@
+/* =========================================================
+   MENU / TOPBAR / DRAWER  — Light Café Theme
+   ========================================================= */
+
+/* -------- Topbar -------- */
+.topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  background: rgba(246, 235, 221, 0.92); /* licht café glas */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  z-index: 50;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0; /* voorkomt overflow */
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  place-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 20px;
+  box-shadow: 0 2px 8px rgba(58, 39, 31, 0.08);
+}
+
+.brand-text {
+  min-width: 0;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--accent); /* gold */
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -------- Hamburger button -------- */
+.hamburger {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(58, 39, 31, 0.08);
+  transition: 0.15s ease;
+}
+
+.hamburger:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+.hamburger span {
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+/* -------- Topbar right side -------- */
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(58, 39, 31, 0.08);
+  transition: 0.15s ease;
+}
+
+.pill:hover {
+  border-color: var(--accent-2); /* terracotta */
+  transform: translateY(-1px);
+}
+
+/* -------- Backdrop -------- */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 14, 10, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 40;
+}
+
+.backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* -------- Drawer -------- */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: min(82vw, 320px);
+  background: linear-gradient(180deg, var(--card), var(--bg-soft));
+  border-right: 1px solid var(--border);
+  transform: translateX(-105%);
+  transition: 0.25s ease;
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 12px 0 28px rgba(58, 39, 31, 0.12);
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 247, 236, 0.9);
+  backdrop-filter: blur(6px);
+}
+
+.drawer-brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.drawer-emoji {
+  font-size: 22px;
+}
+
+.drawer-title {
+  font-weight: 900;
+  color: var(--text);
+}
+
+.drawer-sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(58, 39, 31, 0.08);
+  transition: 0.15s ease;
+}
+
+.close-btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* -------- Nav items -------- */
+.drawer-nav {
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: 0.15s ease;
+}
+
+.nav-item:hover {
+  background: #F9ECDD; /* lichte latte hover */
+  border-color: var(--border);
+}
+
+.nav-item.active {
+  background: #F3DFC6; /* caramel active */
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px rgba(214, 176, 114, 0.45);
+}
+
+.nav-icon {
+  width: 26px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+}
+
+/* -------- Drawer footer -------- */
+.drawer-footer {
+  margin-top: auto;
+  padding: 12px;
+}
+
+.balance-card {
+  background: rgba(255, 247, 236, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(58, 39, 31, 0.08);
+}
+
+.balance-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.balance-value {
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 4px;
+  color: var(--text);
+}
+
+.balance-muted {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* -------- Small phones tweaks -------- */
+@media (max-width: 380px) {
+  .topbar {
+    padding: 0 8px;
+  }
+  .brand-title {
+    font-size: 15px;
+  }
+  .brand-sub {
+    font-size: 11px;
+  }
+  .drawer {
+    width: 86vw;
+  }
+}

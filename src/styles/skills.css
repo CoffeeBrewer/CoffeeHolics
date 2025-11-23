@@ -1,0 +1,1610 @@
+/* =========================
+   SKILLS PAGE LAYOUT
+   ========================= */
+
+.stats-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* =========================
+   HERO / HEADER
+   ========================= */
+
+.skills-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 247, 236, 0.95),
+    rgba(240, 220, 198, 0.95)
+  );
+  border-radius: 1.75rem;
+  box-shadow: 0 22px 48px rgba(70, 46, 26, 0.18);
+  border: 1px solid rgba(180, 130, 90, 0.35);
+  padding: 2.2rem 1.8rem;
+}
+
+.skills-hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills-hero-title {
+  font-size: 2.1rem;
+  margin-bottom: 0.4rem;
+  color: #3d2616;
+}
+
+.skills-hero-sub {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #5f3c27;
+}
+
+.skills-hero-subtext,
+.stats-sub-small {
+  margin-top: 0.4rem;
+  font-size: 0.86rem;
+  color: #7a5a3a;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   SKILLS GRID
+   ========================= */
+
+.skills-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.9rem;
+}
+
+/* Base tile */
+.skill-tile {
+  padding: 0.9rem 1rem 0.8rem;
+  border-radius: 1.25rem;
+  background: radial-gradient(circle at top left, #fff8ec, #f7ecdf);
+  border: 1px solid rgba(190, 143, 93, 0.4);
+  box-shadow: 0 12px 26px rgba(70, 46, 26, 0.12);
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  transition: box-shadow 0.15s ease, transform 0.15s ease,
+    border-color 0.15s ease, background 0.15s ease;
+}
+
+/* Klikbaar gedrag */
+.skill-tile {
+  padding: 1.05rem 1.1rem 0.95rem;   /* iets meer padding */
+  border-radius: 1.45rem;
+  background: radial-gradient(circle at top left, #fff8ec, #f7ecdf);
+  border: 1px solid rgba(190, 143, 93, 0.45);
+  box-shadow: 0 14px 32px rgba(70, 46, 26, 0.16);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition:
+    box-shadow 0.15s ease,
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.skill-tile-clickable {
+  cursor: pointer;
+  text-align: left;
+  background: radial-gradient(circle at top left, #fff9f0, #f8ede1);
+}
+
+.skill-tile-clickable:hover {
+  box-shadow: 0 18px 40px rgba(70, 46, 26, 0.22);
+  transform: translateY(-2px);
+}
+
+.skill-tile--active {
+  border-color: rgba(200, 138, 75, 0.98);
+  box-shadow: 0 20px 46px rgba(90, 57, 30, 0.38);
+  background: radial-gradient(circle at top left, #fff6e5, #f3ddc4);
+  transform: translateY(-2px);
+}
+
+
+/* Icon & meta */
+.skill-icon {
+  flex-shrink: 0;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;              /* 👈 emoji groter */
+  background: radial-gradient(
+    circle at 30% 20%,
+    #fff7eb,
+    #f0cfaa
+  );
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(196, 134, 80, 0.5);
+}
+
+
+.skill-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.skill-name {
+  font-size: 1rem;                 /* iets groter */
+  font-weight: 650;
+  color: #342018;
+}
+
+.skill-lvl {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #b0682f;
+}
+
+
+/* Beschrijving */
+.skill-desc {
+  margin: 0.1rem 0 0.35rem;
+  font-size: 0.78rem;
+  color: #7a5a3a;
+  line-height: 1.4;
+}
+
+/* Progress bar */
+.skill-bar {
+  position: relative;
+  width: 100%;
+  height: 0.48rem;                 /* dikker */
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  border: 1px solid rgba(193, 150, 103, 0.55);
+}
+
+.skill-bar-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #c88a4b, #8b5b32);
+  transform-origin: left;
+}
+
+
+.skill-xp {
+  margin-top: 0.15rem;
+  font-size: 0.78rem;
+  color: #4b2f1d;
+}
+
+/* =========================
+   DETAILPANEL GESELECTEERDE SKILL
+   ========================= */
+
+.skill-detail-card {
+  margin-top: 0.6rem;
+  padding: 1.4rem 1.5rem 1.3rem;
+  border-radius: 1.6rem;
+  background: radial-gradient(circle at top left, #fff8ec, #f6ebde);
+  border: 1px solid rgba(190, 143, 93, 0.6);
+  box-shadow: 0 18px 40px rgba(70, 46, 26, 0.16);
+}
+
+.skill-detail-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.skill-detail-main {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.skill-detail-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.18));
+}
+
+.skill-detail-title {
+  margin: 0 0 0.2rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #3b2417;
+}
+
+.skill-detail-sub {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #6e4b33;
+  max-width: 24rem;
+}
+
+/* XP box rechts */
+.skill-detail-xpbox {
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(190, 143, 93, 0.6);
+  text-align: right;
+  min-width: 170px;
+}
+
+.skill-detail-xp-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #a27340;
+}
+
+.skill-detail-xp-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3b2417;
+}
+
+.skill-detail-xp-next {
+  margin-top: 0.15rem;
+  font-size: 0.78rem;
+  color: #7b5537;
+}
+
+/* Actions */
+.skill-detail-actions {
+  margin-top: 1rem;
+}
+
+.skill-detail-actions-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #a27340;
+  margin-bottom: 0.4rem;
+}
+
+.skill-detail-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-detail-action-btn {
+  font-size: 0.78rem;
+  padding-inline: 0.75rem;
+}
+
+/* =========================
+   WORLD MAP ONDER SKILLS
+   ========================= */
+
+.worldmap-card {
+  margin-top: 1.25rem;
+  padding: 1.2rem 1.4rem 1.5rem;
+  text-align: center;
+  border-radius: 1.6rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 247, 236, 0.95),
+    rgba(240, 220, 198, 0.92)
+  );
+  border: 1px solid rgba(180, 130, 90, 0.35);
+  box-shadow: 0 20px 48px rgba(70, 46, 26, 0.18);
+}
+
+.worldmap-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #4a2e1c;
+  font-weight: 600;
+}
+
+.worldmap-img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 1.2rem;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+/* =========================
+   EXTRA UITLEG ONDERAAN
+   ========================= */
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #3c2418;
+  margin-bottom: 0.4rem;
+}
+
+.section-sub {
+  font-size: 0.88rem;
+  color: #6a4931;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.section-list {
+  margin: 0.6rem 0 0.4rem;
+  padding-left: 1.2rem;
+  font-size: 0.86rem;
+  color: #5c3a26;
+}
+
+.section-list li + li {
+  margin-top: 0.1rem;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 720px) {
+  .stats-page {
+    padding-inline: 1rem;
+  }
+
+  .skills-hero {
+    padding-inline: 1.4rem;
+  }
+
+  .skill-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skill-detail-xpbox {
+    text-align: left;
+    min-width: 0;
+    margin-top: 0.6rem;
+  }
+
+  .worldmap-card {
+    padding-inline: 1.1rem;
+  }
+}
+.skill-detail-brewing-extra {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed rgba(190, 143, 93, 0.6);
+}
+
+.skill-detail-brewing-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+  gap: 1rem;
+}
+
+.skill-detail-brewing-col {
+  font-size: 0.82rem;
+  color: #6e4b33;
+}
+
+.skill-detail-section-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #a27340;
+  margin-bottom: 0.4rem;
+}
+
+/* Achievements */
+.skill-detail-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-detail-achievement {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 0.35rem 0.4rem;
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid transparent;
+}
+
+.skill-detail-achievement + .skill-detail-achievement {
+  margin-top: 0.25rem;
+}
+
+.skill-detail-achievement--reached {
+  border-color: rgba(123, 167, 108, 0.8);
+  background: linear-gradient(
+    135deg,
+    rgba(237, 252, 235, 0.95),
+    rgba(219, 239, 214, 0.95)
+  );
+}
+
+.skill-detail-ach-badge {
+  flex-shrink: 0;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #3b2417;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(190, 143, 93, 0.7);
+}
+
+.skill-detail-ach-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.skill-detail-ach-title {
+  font-weight: 600;
+  color: #3c2418;
+}
+
+.skill-detail-ach-hint {
+  font-size: 0.76rem;
+  color: #7a5a3a;
+}
+
+/* Focus list */
+.skill-detail-focus {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.skill-detail-focus li + li {
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 720px) {
+  .skill-detail-brewing-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.skill-detail-quests {
+  margin-top: 0.9rem;
+}
+
+.skill-detail-quests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.skill-detail-quest-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(190, 143, 93, 0.45);
+}
+
+.skill-detail-quest-main {
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+}
+
+.skill-detail-quest-emoji {
+  font-size: 1.1rem;
+}
+
+.skill-detail-quest-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.skill-detail-quest-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #3b2417;
+}
+
+.skill-detail-quest-desc {
+  font-size: 0.78rem;
+  color: #6e4b33;
+}
+
+.skill-detail-quest-reward {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3f2918;
+  white-space: nowrap;
+}
+/* Quests in skill detail */
+
+.skill-detail-quests {
+  margin-top: 0.9rem;
+}
+
+.skill-detail-quests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.skill-detail-quest-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(190, 143, 93, 0.45);
+}
+
+.skill-detail-quest-item--completed {
+  opacity: 0.8;
+  background: linear-gradient(
+    135deg,
+    rgba(237, 252, 235, 0.96),
+    rgba(222, 239, 216, 0.95)
+  );
+  border-color: rgba(123, 167, 108, 0.85);
+}
+
+.skill-detail-quest-main {
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+}
+
+.skill-detail-quest-emoji {
+  font-size: 1.1rem;
+}
+
+.skill-detail-quest-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.skill-detail-quest-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #3b2417;
+}
+
+.skill-detail-quest-desc {
+  font-size: 0.78rem;
+  color: #6e4b33;
+}
+
+.skill-detail-quest-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.skill-detail-quest-reward {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3f2918;
+  white-space: nowrap;
+}
+
+.skill-detail-quest-status {
+  font-size: 0.72rem;
+  padding: 0.12rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(123, 167, 108, 0.14);
+  border: 1px solid rgba(123, 167, 108, 0.85);
+  color: #325324;
+}
+
+/* Recommended next quest */
+
+.skill-detail-recommended {
+  padding: 0.55rem 0.6rem 0.6rem;
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px dashed rgba(190, 143, 93, 0.7);
+  margin-top: 0.4rem;
+}
+
+.skill-detail-recommended-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #a27340;
+  margin-bottom: 0.3rem;
+}
+
+.skill-detail-recommended-body {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.skill-detail-recommended-main {
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 720px) {
+  .skill-detail-recommended-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skill-detail-quest-right {
+    align-items: flex-start;
+  }
+}
+/* ========= HIGH-TECH VARIANT VOOR SKILL CARDS ========= */
+
+/* Grid zelf mag blijven, dat is prima */
+.skills-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+/* Card zelf: minder rond, donkerder, meer “panel” */
+.skill-tile {
+  padding: 1rem 1.1rem 0.95rem;
+  border-radius: 1rem;
+  background: radial-gradient(circle at top left, #1b120e, #0e0907);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(120, 84, 52, 0.25);
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  transition:
+    box-shadow 0.18s ease,
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.skill-tile-clickable {
+  cursor: pointer;
+  text-align: left;
+}
+
+.skill-tile-clickable:hover {
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(199, 140, 75, 0.4);
+  transform: translateY(-2px);
+}
+
+.skill-tile--active {
+  border-color: rgba(222, 164, 96, 0.95);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(222, 164, 96, 0.9);
+  background: radial-gradient(circle at top left, #24140b, #110b08);
+  transform: translateY(-2px);
+}
+
+/* Icon: geen schattige bubble meer, maar strakke “chip” */
+.skill-icon {
+  flex-shrink: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  background: radial-gradient(circle at 30% 20%, #2e1d10, #120a06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(199, 140, 75, 0.28);
+}
+
+/* Tekst: iets strakker, minder “cute” kleuren */
+.skill-name {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #f3e2d3;
+}
+
+.skill-lvl {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f0b16d;
+}
+
+/* Description met lagere opacity voor meer “UI”-feel */
+.skill-desc {
+  margin: 0.1rem 0 0.4rem;
+  font-size: 0.78rem;
+  color: rgba(230, 205, 180, 0.75);
+  line-height: 1.4;
+}
+
+/* Progress bar: dun, lineair, met lichte glow */
+.skill-bar {
+  position: relative;
+  width: 100%;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: rgba(40, 28, 20, 0.9);
+  overflow: hidden;
+  border: 1px solid rgba(120, 84, 52, 0.7);
+}
+
+.skill-bar-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f4b46b, #f18d3a);
+  box-shadow: 0 0 14px rgba(241, 141, 58, 0.8);
+  transform-origin: left;
+}
+
+.skill-xp {
+  margin-top: 0.18rem;
+  font-size: 0.76rem;
+  color: rgba(233, 210, 188, 0.82);
+}
+
+/* Detail card blijft warm, maar iets minder schattig */
+.skill-detail-card {
+  margin-top: 0.6rem;
+  padding: 1.4rem 1.5rem 1.3rem;
+  border-radius: 1.2rem;
+  background: radial-gradient(circle at top left, #1f1510, #120c09);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(163, 117, 76, 0.55);
+}
+
+.skill-detail-title {
+  color: #f3e2d3;
+}
+
+.skill-detail-sub {
+  color: rgba(227, 202, 176, 0.8);
+}
+/* ========= LIGHT TOP BORDER ACCENT ========= */
+
+.skill-tile {
+  position: relative;
+  overflow: hidden; /* nodig voor pseudo-element glow */
+}
+
+/* Lichte top-glow */
+.skill-tile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 0.4rem 0.4rem 0 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 196, 140, 0.65),
+    rgba(255, 219, 175, 0.45) 25%,
+    rgba(255, 219, 175, 0.15) 60%,
+    rgba(255, 196, 140, 0.3)
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Hover versterkt glow een beetje */
+.skill-tile-clickable:hover::before {
+  opacity: 1;
+  transform: scaleY(1.15);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* Active variant (meer glow) */
+.skill-tile--active::before {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 180, 110, 0.85),
+    rgba(255, 220, 180, 0.55) 25%,
+    rgba(255, 220, 180, 0.28) 60%,
+    rgba(255, 180, 110, 0.55)
+  );
+}
+/* ========= ACTIVE SKILL DETAIL: HIGH-TECH PANEL STYLE ========= */
+
+.skill-detail-card {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.4rem 1.5rem 1.4rem;
+  border-radius: 1.1rem;
+  background: radial-gradient(circle at top left, #1f1510, #120c09);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(163, 117, 76, 0.4); /* subtle copper edge */
+  overflow: hidden; /* needed for glow strip */
+}
+
+/* Top LED glow like the tiles */
+.skill-detail-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 0.4rem 0.4rem 0 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 196, 140, 0.65),
+    rgba(255, 219, 175, 0.45) 25%,
+    rgba(255, 219, 175, 0.15) 60%,
+    rgba(255, 196, 140, 0.45)
+  );
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* On hover the glow intensifies very slightly */
+.skill-detail-card:hover::before {
+  opacity: 1;
+  transform: scaleY(1.1);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* Title styling */
+.skill-detail-title {
+  font-size: 1.2rem;
+  color: #f3e2d3;
+  font-weight: 650;
+  margin-bottom: 0.4rem;
+}
+
+.skill-detail-sub {
+  font-size: 0.86rem;
+  color: rgba(227, 202, 176, 0.78);
+  line-height: 1.45;
+  max-width: 580px;
+}
+
+/* XP box on the right */
+.skill-detail-xpbox {
+  text-align: right;
+  color: #f1d5b6;
+}
+
+.skill-detail-xp-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f4b46b;
+}
+
+
+/* Section headers within the detail card */
+.skill-detail-section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #a27340;
+  margin-bottom: 0.4rem;
+}
+
+/* Action buttons row */
+.skill-detail-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-detail-action-btn {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.78rem;
+}
+/* =============== ACTIVE SKILL: WOW LAYOUT OVERHAUL =============== */
+
+.skill-detail-card {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.4rem 1.6rem 1.4rem;
+  border-radius: 1.1rem;
+  background: radial-gradient(circle at top left, #1b120e, #0b0705);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(163, 117, 76, 0.45);
+  overflow: hidden;
+}
+
+/* top glow strip */
+.skill-detail-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 196, 140, 0.8),
+    rgba(255, 219, 175, 0.5) 25%,
+    rgba(255, 219, 175, 0.15) 60%,
+    rgba(255, 196, 140, 0.55)
+  );
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.skill-detail-card:hover::before {
+  opacity: 1;
+  transform: scaleY(1.05);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* TOP ROW LAYOUT */
+.skill-detail-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.skill-detail-top-left {
+  display: flex;
+  gap: 0.95rem;
+  align-items: flex-start;
+  flex: 1 1 260px;
+}
+
+.skill-detail-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* icon in detail card */
+.skill-detail-icon {
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 0.9rem;
+  /* background: radial-gradient(circle at 30% 20%, #301f13, #130a06); */
+  /* border: 1px solid rgba(255, 255, 255, 0.06); */
+  /* box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.75),
+    0 0 18px rgba(199, 140, 75, 0.3); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+}
+
+/* small pills above title */
+.skill-detail-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.skill-detail-pill {
+  font-size: 0.7rem;
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(190, 143, 93, 0.75);
+  color: #f6e0c9;
+  background: rgba(40, 24, 16, 0.95);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.skill-detail-pill-id {
+  border-color: rgba(255, 196, 140, 0.95);
+  background: rgba(81, 49, 28, 0.95);
+}
+
+/* title + sub */
+.skill-detail-title {
+  font-size: 1.22rem;
+  color: #f3e2d3;
+  font-weight: 650;
+  margin: 0;
+}
+
+.skill-detail-sub {
+  margin: 0;
+  font-size: 0.86rem;
+  color: rgba(227, 202, 176, 0.82);
+  line-height: 1.5;
+  max-width: 32rem;
+}
+
+/* RIGHT SIDE: LEVEL RING + METRICS */
+
+.skill-detail-top-right {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex: 0 0 auto;
+}
+
+.skill-detail-level-ring {
+  --level-deg: 220deg;
+  width: 4.1rem;
+  height: 4.1rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #120a06 55%, transparent 56%),
+    conic-gradient(
+      #f4b46b var(--level-deg),
+      rgba(40, 28, 20, 0.85) 0deg
+    );
+  box-shadow:
+    0 0 22px rgba(244, 180, 107, 0.7),
+    0 0 0 1px rgba(120, 84, 52, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-detail-level-inner {
+  width: 64%;
+  height: 64%;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #24140d, #0b0603);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-detail-level-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #c89b69;
+}
+
+.skill-detail-level-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f7e1c4;
+}
+
+.skill-detail-top-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skill-detail-xp-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skill-detail-xp-mini-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #a27340;
+}
+
+.skill-detail-xp-mini-value {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #f4b46b;
+}
+
+/* BODY GRID (brewing extra + quests) */
+
+.skill-detail-body-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.25fr);
+  gap: 1.2rem;
+  margin-top: 1.1rem;
+}
+
+.skill-detail-section {
+  min-width: 0;
+}
+
+/* Footer actions area */
+
+.skill-detail-footer {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(80, 52, 32, 0.85);
+  padding-top: 0.8rem;
+}
+
+/* Keep existing actions-row styles but they inherit darker theme */
+.skill-detail-actions-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #a27340;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 900px) {
+  .skill-detail-body-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .skill-detail-top-right {
+    margin-top: 0.6rem;
+  }
+
+  .skill-detail-top {
+    align-items: flex-start;
+  }
+}
+/* Improve contrast for active skill header text */
+.skill-detail-title {
+  color: #f9e8d2 !important; /* lichter, meer helder */
+  text-shadow: 0 0 6px rgba(0,0,0,0.45); /* subtiele depth */
+}
+
+.skill-detail-sub {
+  color: rgba(255, 235, 210, 0.78) !important;
+}
+
+/* Pills boven titel: iets helderder en duidelijker */
+.skill-detail-pill {
+  background: rgba(55, 36, 22, 0.88) !important;
+  color: #ffe7c9 !important;
+  border-color: rgba(210, 160, 110, 0.9) !important;
+}
+
+.skill-detail-pill-id {
+  background: rgba(95, 60, 32, 0.9) !important;
+  border-color: rgba(255, 205, 150, 1) !important;
+}
+
+/* Kleine metrics naast levelring beter leesbaar */
+.skill-detail-xp-mini-label {
+  color: #cda981 !important;
+}
+
+.skill-detail-xp-mini-value {
+  color: #ffd7a3 !important;
+}
+/* --- Fix: hoge contrast tekst in active skill card header --- */
+
+/* Titel echt donker */
+.skill-detail-title {
+  color: #2b1910 !important;        /* diepe espresso */
+  text-shadow: none !important;
+}
+
+/* Subtekst goed leesbaar op licht latte-bg */
+.skill-detail-sub {
+  color: #5d3a26 !important;        /* warme maar duidelijke koffie-tint */
+}
+
+/* Pills mogen licht blijven, maar tekst iets donkerder */
+.skill-detail-pill {
+  color: #f9e0bd !important;
+}
+
+/* Kleine XP-teksten rechts ook iets donkerder / duidelijker */
+.skill-detail-xp-mini-label {
+  color: #8a5a32 !important;
+}
+
+.skill-detail-xp-mini-value {
+  color: #b86628 !important;
+}
+/* =============== ACTIVE SKILL CARD – COHERENT DASHBOARD =============== */
+
+.skill-detail-card {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.4rem 1.6rem 1.2rem;
+  border-radius: 1.1rem;
+  background: radial-gradient(circle at top left, #1b120e, #090504);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(163, 117, 76, 0.45);
+  overflow: hidden;
+}
+
+/* top glow */
+.skill-detail-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 196, 140, 0.8),
+    rgba(255, 219, 175, 0.5) 25%,
+    rgba(255, 219, 175, 0.1) 60%,
+    rgba(255, 196, 140, 0.5)
+  );
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* layout */
+.skill-detail-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.skill-detail-top-left {
+  display: flex;
+  gap: 0.95rem;
+  align-items: flex-start;
+  flex: 1 1 260px;
+}
+
+.skill-detail-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* icon */
+.skill-detail-icon {
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 0.9rem;
+  background: radial-gradient(circle at 30% 20%, #301f13, #130a06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.75),
+    0 0 18px rgba(199, 140, 75, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+}
+
+/* pills */
+.skill-detail-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.skill-detail-pill {
+  font-size: 0.7rem;
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(190, 143, 93, 0.75);
+  color: #fbe7ce;
+  background: rgba(42, 26, 16, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.skill-detail-pill-id {
+  border-color: rgba(255, 196, 140, 0.9);
+  background: rgba(82, 51, 29, 0.95);
+}
+
+/* heading text */
+.skill-detail-title {
+  font-size: 1.22rem;
+  color: #f9e8d2;
+  font-weight: 650;
+  margin: 0;
+}
+
+.skill-detail-sub {
+  margin: 0;
+  font-size: 0.86rem;
+  color: rgba(245, 225, 205, 0.82);
+  line-height: 1.5;
+  max-width: 32rem;
+}
+
+/* right side: level ring + metrics */
+.skill-detail-top-right {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex: 0 0 auto;
+}
+
+.skill-detail-level-ring {
+  --level-deg: 220deg;
+  width: 4.1rem;
+  height: 4.1rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #120a06 55%, transparent 56%),
+    conic-gradient(
+      #f4b46b var(--level-deg),
+      rgba(40, 28, 20, 0.85) 0deg
+    );
+  box-shadow:
+    0 0 22px rgba(244, 180, 107, 0.7),
+    0 0 0 1px rgba(120, 84, 52, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-detail-level-inner {
+  width: 64%;
+  height: 64%;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #24140d, #0b0603);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-detail-level-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #c89b69;
+}
+
+.skill-detail-level-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f7e1c4;
+}
+
+.skill-detail-top-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skill-detail-xp-mini-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #cda981;
+}
+
+.skill-detail-xp-mini-value {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #ffd7a3;
+}
+
+/* body grid */
+.skill-detail-body-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.25fr);
+  gap: 1.1rem;
+  margin-top: 1.1rem;
+}
+
+.skill-detail-section {
+  min-width: 0;
+  padding: 0.85rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(22, 13, 9, 0.96);
+  border: 1px solid rgba(120, 84, 52, 0.55);
+}
+
+/* section labels + subheadings */
+.skill-detail-section-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #a27340;
+  margin-bottom: 0.4rem;
+}
+
+.skill-detail-subheading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #f1d4b6;
+  margin-bottom: 0.25rem;
+}
+
+/* generic focus list */
+.skill-detail-focus {
+  margin: 0.15rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.8rem;
+  color: rgba(238, 220, 197, 0.88);
+  line-height: 1.5;
+}
+
+.skill-detail-focus li + li {
+  margin-top: 0.12rem;
+}
+
+/* quests side */
+.skill-detail-quests-list-scroll {
+  max-height: 230px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+/* scrollbar subtle */
+.skill-detail-quests-list-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.skill-detail-quests-list-scroll::-webkit-scrollbar-thumb {
+  background: rgba(160, 120, 80, 0.6);
+  border-radius: 999px;
+}
+
+/* footer line */
+.skill-detail-footer {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(80, 52, 32, 0.85);
+  padding-top: 0.8rem;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .skill-detail-body-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .skill-detail-top-right {
+    margin-top: 0.6rem;
+  }
+
+  .skill-detail-top {
+    align-items: flex-start;
+  }
+}
+/* =========================================================
+   UPGRADED SKILLS HERO MODULE (new design)
+   ========================================================= */
+
+.skills-hero-upgraded {
+  margin-top: 0.2rem;
+  padding: .1rem 1.6rem 2rem;
+  border-radius: 1.4rem;
+  background: radial-gradient(circle at 20% 20%, #2a1a14, #0d0906);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow:
+    0 22px 55px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(150, 110, 70, 0.28),
+    inset 0 0 24px rgba(255, 198, 140, 0.05);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Light top LED strip */
+.skills-hero-upgraded::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 196, 140, 0.85),
+    rgba(255, 219, 175, 0.5) 30%,
+    rgba(255, 219, 175, 0.12) 70%,
+    rgba(255, 196, 140, 0.55)
+  );
+  opacity: 1;
+  pointer-events: none;
+}
+
+.skills-hero-up-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Title row */
+.skills-hero-title-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.7rem;
+}
+
+.skills-hero-icon {
+  font-size: 1.55rem;
+  filter: drop-shadow(0 0 8px rgba(255, 198, 140, 0.45));
+}
+
+.skills-hero-up-title {
+  font-size: 1.7rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: #f5e7d7;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+/* Level number */
+.skills-hero-level {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+  color: #d7b38a;
+}
+
+.skills-hero-level span {
+  color: #ffdaae;
+  font-weight: 700;
+}
+
+/* Description */
+.skills-hero-up-desc {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #e8d7c8;
+  opacity: 0.92;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Stat container */
+.skills-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  margin-bottom: 1.1rem;
+}
+
+.skills-hero-stat {
+  font-size: 0.92rem;
+  color: #d7b38a;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-hero-stat span {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffdaae;
+  margin-top: 0.2rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 8px rgba(255, 198, 140, 0.35);
+}
